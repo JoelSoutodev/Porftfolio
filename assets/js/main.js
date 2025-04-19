@@ -5,7 +5,7 @@ const navMenu = document.getElementById('nav-menu'),
 /* Menu show */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
+        navMenu.classList.add('show-menu') 
     })
 }
 
@@ -24,3 +24,10 @@ const linkAction = () =>{
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+const shadowHeader = () =>{
+    const header = document.getElementById('header')
+    this.scrollY >= 50 ? header.classList.add('shadow-header')
+                       : header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll', shadowHeader)
