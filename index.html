@@ -31,7 +31,7 @@
 
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">Início</a>
+                        <a href="#home" class="nav__link active-link">Início</a>
                     </li>
 
                     <li class="nav__item">
@@ -43,7 +43,7 @@
                     </li>
 
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contato</a>
+                        <a href="#contact" class="nav__link nav__link-button">Contato</a>
                     </li>
                 </ul>
 
@@ -53,6 +53,8 @@
             </div>
 
             <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-4-line"></i>
                 </div>
@@ -157,7 +159,7 @@
          </section>
 
          <!--==================== SERVICES ====================-->
-         <section class="services section">
+         <section class="services section" id="services">
             <h2 class="section__title-2">
                 <span>Serviços.</span>
             </h2>
@@ -215,22 +217,196 @@
 
          <!--==================== PROJECTS ====================-->
          <section class="projects section" id="projects">
-            
+            <h2 class="section__title-1">
+                <span>Projetos.</span>
+            </h2>
+
+            <div class="projects__container container grid">
+                <article class="projects__card">
+                    <div class="projects__image">
+                        <img src="assets/img/project-1.jpg" alt="imagem" class="projects__img">
+
+                        <a href="#" class="projects__button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects__content">
+                        <h3 class="projects__subtitle">Website</h3>
+                        <h2 class="projects__title">Restaurant Website</h2>
+
+                        <p class="projects__description">
+                            Website responsivo para o restaurante Sabores da Terra, com cardápio online e sistema de reservas. Design moderno, navegação intuitiva e integração com redes sociais.
+                        </p>
+                    </div>
+
+                    <div class="projects__buttons">
+                        <a href="https://github.com/" target="_blank" class="projects__link">
+                            <i class="ri-github-line"></i> Visualizar
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projects__card">
+                    <div class="projects__image">
+                        <img src="assets/img/project-3.jpg" alt="imagem" class="projects__img">
+
+                        <a href="#" class="projects__button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects__content">
+                        <h3 class="projects__subtitle">App</h3>
+                        <h2 class="projects__title">Fast Food App</h2>
+
+                        <p class="projects__description">
+                            App de fast food com pedidos online, personalização de lanches e rastreio em tempo real. Design vibrante, usabilidade rápida e integração com pagamentos digitais.
+                        </p>
+                    </div>
+
+                    <div class="projects__buttons">
+                        <a href="https://github.com/" target="_blank" class="projects__link">
+                            <i class="ri-github-line"></i> Visualizar
+                        </a>
+                    </div>
+                </article>
+
+                <article class="projects__card">
+                    <div class="projects__image">
+                        <img src="assets/img/project-2.jpg" alt="imagem" class="projects__img">
+
+                        <a href="#" class="projects__button button">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="projects__content">
+                        <h3 class="projects__subtitle">Website</h3>
+                        <h2 class="projects__title">Barbershop Website</h2>
+
+                        <p class="projects__description">
+                            Website para barbearia com agendamentos online, catálogo de estilos e integração com WhatsApp.Visual moderno, navegação simples e foco na experiência do cliente.
+                        </p>
+                    </div>
+
+                    <div class="projects__buttons">
+                        <a href="https://github.com/" target="_blank" class="projects__link">
+                            <i class="ri-github-line"></i> Visualizar
+                        </a>
+                    </div>
+                </article>
+            </div>
          </section>
 
          <!--==================== CONTACT ====================-->
          <section class="contact section" id="contact">
-            
+            <div class="contact__container grid">
+                <div class="contact__data">
+                    <h2 class="section__title-2">
+                        <span>Contate me.</span>
+                    </h2>
+
+                    <p class="contact__description-1">
+                        Lerei todos os e-mails. Envie-me qualquer mensagem que quiser e eu responderei.
+                    </p>
+
+                    <p class="contact__description-2">
+                        Preciso do seu <b>Nome</b> e <b>Endereço de e-mail</b>, mas você não receberá nada além da sua resposta.
+                    </p>
+
+                    <div class="geometric-box"></div>
+                </div>
+
+                <div class="contact__mail">
+                    <h2 class="contact__title">
+                        Envie-me uma mensagem
+                    </h2>
+
+                    <form action="" class="contact__form" id="contact-form">
+                        <div class="contact__group">
+                            <div class="contact__box">
+                                <input type="text" name="user_name" class="contact__input" id="name" required placeholder="Nome">
+                                <label for="name" class="contact__label">Nome</label>
+                            </div>
+
+                            <div class="contact__box">
+                                <input type="text" name="user_email" class="contact__input" id="email" required placeholder="Endereço de e-mail">
+                                <label for="email" class="contact__label">Endereço de e-mail</label>
+                            </div>
+                        </div>
+
+                        <div class="contact__box">
+                            <input type="text" name="user_subject" class="contact__input" id="subject" required placeholder="Assunto">
+                            <label for="subject" class="contact__label">Assunto</label>
+                        </div>
+
+                        <div class="contact__box contact__area">
+                            <textarea name="user_message" id="message" class="contact__input" required placeholder="Mensagem"></textarea>
+                            <label for="message" class="contact__label">Mensagem</label>
+                        </div>
+
+                        <button type="submit" class="contact__button button">
+                            <i class="ri-send-plane-line"></i> Enviar
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact__social">
+                    <img src="assets/img/curved-arrow.svg" alt="" class="contact__social-arrow">
+
+                    <div class="contact__social-data">
+                        <div>
+                            <p class="contact__social-description">
+                                Visite minhas redes sociais.
+                            </p>
+                        </div>
+
+                        <div class="contact__social-links">
+                            <a href="https://www.facebook.com/" target="_blank" class="contact__social-link">
+                                <i class="ri-facebook-circle-line"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/" target="_blank" class="contact__social-link">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/" target="_blank" class="contact__social-link">
+                                <i class="ri-linkedin-box-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
          </section>
       </main>
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         
+         <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li>
+                    <a href="#about" class="footer__link">Sobre </a>
+                </li>
+
+                <li>
+                    <a href="#services" class="footer__link">Serviços</a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="footer__link">Projetos</a>
+                </li>
+            </ul>
+            <span class="footer__copy">
+                &copy; Todos os direitos reservados a <a href="">Pedro Vinícius</a>
+            </span>
+         </div>
       </footer>
 
       <!--========== SCROLL UP ==========-->
-      
+      <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+      </a>
 
       <!--=============== SCROLLREVEAL ===============-->
       <script src=""></script>
