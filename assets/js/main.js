@@ -1,6 +1,6 @@
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+const navMenu = document.getElementById('nav-menu')
+const navToggle = document.getElementById('nav-toggle')
+const navClose = document.getElementById('nav-close')
 
 /* Menu show */
 if(navToggle){
@@ -31,6 +31,34 @@ const shadowHeader = () =>{
                        : header.classList.remove('shadow-header')
 }
 window.addEventListener('scroll', shadowHeader)
+
+const contactForm = document.getElementById('contact-form')
+const contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // serviceID - templateID - #form - publicKey
+
+    emailjs.sendForm('service_kbuw42b','template_ffo7xdf','#contact-form','cTA8w4Dmwmd1NMSgW')
+    .then(() => {
+        //mensagem de sucesso
+        contactMessage.textContent = 'Mensagem enviada com sucesso !!! ✅'
+
+        //mensagem remover depois de cinco segundos
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 5000)
+
+        // limpa inputs
+        contactForm.reset()
+    }, () => {
+        // mensagem de erro
+        contactMessage.textContent = 'mensagem não enviada (erro de serviço) ❌'
+    })
+}
+
+contactForm.addEventListener('submit', sendEmail)
 
 const scrollUp = () =>{
     const scrollUp = document.getElementById('scroll-up');

@@ -4,21 +4,21 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== FAVICON ===============-->
+      <!--=============== IMG DO TITLE ===============-->
       <link rel="shortcut icon" href="assets/img/favicon1.png" type="image/x-icon">
 
-      <!--=============== REMIXICONS ===============-->
+      <!--=============== IMPORTAÇÃO DO REMIX ICON ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
 
-      <title>Responsive portfolio website Rian - Bedimcode</title>
+      <title>Portfólio Pessoal | Pedro Vinícius</title>
    </head>
    <body>
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
-         <nav class="nav container">
+         <nav class="nav container"> <!-- CONTAINER DA NAV -->
             <a href="#" class="nav__logo">
                 <span class="nav__logo-circle">P</span>
                 <span class="nav__logo-name">Pedro Vinícius.</span>
@@ -91,14 +91,6 @@
                         </a>
 
                         <a href="https://github.com/JoelSoutodev/Porftfolio" target="_blank" class="home__social-link">
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
                             <i class="ri-github-line"></i>
                         </a>
                     </div>
@@ -354,6 +346,8 @@
                             <label for="message" class="contact__label">Mensagem</label>
                         </div>
 
+                        <p class="contact__message" id="contact-message"></p>
+
                         <button type="submit" class="contact__button button">
                             <i class="ri-send-plane-line"></i> Enviar
                         </button>
@@ -420,7 +414,7 @@
       <script src=""></script>
       
       <!--=============== EMAIL JS ===============-->
-      
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>

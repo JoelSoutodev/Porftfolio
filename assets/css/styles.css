@@ -1,32 +1,32 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+/*=============== VARIÁVEIS CSS ===============*/
 :root {
   --header-height: 3.5rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(14, 98%, 50%);
-  --black-color: hsl(0, 0%, 0%);
-  --black-color-light: hsl(0, 0%, 40%);
-  --white-color: hsl(0, 0%, 95%);
-  --title-color: hsl(0, 0%, 0%);
-  --text-color: hsl(0, 0%, 35%);
-  --text-color-light: hsl(0, 0%, 64%);
-  --body-color: hsl(0, 0%, 87%);
-  --container-color: hsl(0, 0%, 83%);
+  /*========== Cores ==========*/
+  /*Serão utilizadas essas cores de base*/
+  --first-color: rgb(252, 61, 3);
+  --black-color: rgb(0, 0, 0);
+  --black-color-light: rgb(102, 102, 102);
+  --white-color: rgb(242, 242, 242);
+  --title-color: rgb(0, 0, 0);
+  --text-color: rgb(89, 89, 89);
+  --text-color-light: rgb(163, 163, 163);
+  --body-color: rgb(222, 222, 222);
+  --container-color: rgb(212, 212, 212);
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
+  /*========== FONTES ==========*/
+ 
   --body-font: "Bai Jamjuree", sans-serif;
-  --biggest-font-size: 2.5rem;
-  --h1-font-size: 1.75rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
+  --biggest-font-size: 40px;
+  --h1-font-size: 28px;
+  --h2-font-size: 20px; 
+  --h3-font-size: 18px;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --smaller-font-size: 12px;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -34,20 +34,20 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /*========== z index ==========*/
+  /*========== z-index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 
-/*========== Responsive typography ==========*/
+/*========== FONTES TAMANHO PARTE RESPONSIVA ==========*/
 @media screen and (min-width: 1150px) {
   :root {
-    --biggest-font-size: 4.5rem;
-    --h1-font-size: 3rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
+    --biggest-font-size: 72px;
+    --h1-font-size: 48px;
+    --h2-font-size: 24;
+    --h3-font-size: 20px;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
     --smaller-font-size: .813rem;
   }
 }
@@ -90,7 +90,7 @@ img {
   height: auto;
 }
 
-/*=============== THEME ===============*/
+/*=============== TEMA ===============*/
 .nav__buttons{
   display: flex;
   align-items: center;
@@ -104,28 +104,28 @@ img {
   transition: color .3s;
 }
 
-/*========== Variables Dark theme ==========*/
+/*========== Variáveis tema dark ==========*/
 body.dark-theme{
-  --first-color: hsl(14, 80%, 50%);
-  --black-color: hsl(0, 0%, 18%);
-  --black-color-light: hsl(0, 0%, 30%);
-  --title-color: hsl(0, 0%, 95%);
-  --text-color: hsl(0, 0%, 70%);
-  --body-color: hsl(0, 0%, 8%);
-  --container-color: hsl(0, 0%, 12%);
+  --first-color: rgb(230, 73, 25);
+  --black-color: rgb(46, 46, 46);
+  --black-color-light: rgb(77, 77, 77);
+  --title-color: rgb(242, 242, 242);
+  --text-color: rgb(179, 179, 179);
+  --body-color: rgb(20, 20, 20);
+  --container-color: rgb(31, 31, 31);
 }
 
 /*========== 
-	Color changes in some parts of 
-	the website, in dark theme
+	Mudanças de cor em algumas partes
+do site, no tema escuro
 ==========*/
 .dark-theme .shadow-header{
-  box-shadow: 0 1px 12px hsla(0, 0%, 0%, .6);
+  box-shadow: 0 1px 12px #00000099;
 }
 
 .dark-theme .section__title-1::after,
 .dark-theme .section__title-2::after{
-  background-color: hsla(14, 70%, 50%, .2);
+  background-color: #d9502633;
 }
 
 .dark-theme :is(.home__arrow, .home__line, .about__line){
@@ -165,7 +165,7 @@ body.dark-theme{
 .dark-theme::-webkit-scrollbar-thumb:hover{
   background-color: hsl(0, 0%, 40%);
 }
-/*=============== REUSABLE CSS CLASSES ===============*/
+/*=============== CLASSE CSS REUTILIZÁVEL ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
@@ -180,7 +180,7 @@ body.dark-theme{
   padding-block: 4rem 2rem;
 }
 
-.section__title-1, 
+.section__title-1, /* Estilização para cada título inicial das seções*/
 .section__title-2 {
   position: relative;
   font-size: var(--h1-font-size);
@@ -210,7 +210,7 @@ body.dark-theme{
   bottom: -4px;
 }
 
-.geometric-box {
+.geometric-box { /* Quadrado laranja*/
   position: absolute;
   width: 20px;
   height: 20px;
@@ -218,7 +218,7 @@ body.dark-theme{
   rotate: -30deg;
 }
 
-.geometric-box::after {
+.geometric-box::after { /* Parte preta do quadrado laranja */ 
   content: "";
   position: absolute;
   width: 16px;
@@ -228,19 +228,16 @@ body.dark-theme{
   top: -5px;
 }
 
-.main {
-  overflow: hidden; /* For animation ScrollReveal */
-}
 
 /*=============== HEADER & NAV ===============*/
 .header{
-    position: fixed;
+    position: fixed; /* Acompanha a tela*/
     width: 100%;
     top: 0;
     left: 0;
     background-color: var(--body-color);
     z-index: var(--z-fixed);
-    transition: box-shadow .4s, background-color .4s;
+    transition: box-shadow .4s, background-color .4s; /* suaviza a animação */
 }
 
 .nav{
@@ -277,18 +274,18 @@ body.dark-theme{
     font-size: 1.25rem;
     cursor: pointer;
 }
-/* Navigation for mobile devices */
+/* Navegação para mobile */
 @media screen and (max-width: 1150px){
     .nav__menu{
         position: fixed;
         top: -100%;
         left: 0;
-        background-color: hsla(0, 0%, 0%, .75);
+        background-color: rgba(0, 0, 0, 0.75);
         width: 100%;
         padding-block: 1.8rem 5rem;
         text-align: center;
         backdrop-filter: blur(8px);
-        transition: top .4s;
+        transition: top .4s; 
     }
 } 
 
@@ -367,17 +364,17 @@ body.dark-theme{
     cursor: pointer;
 }
 
-/* Show menu */
+/* mostrar menu */
 .show-menu{
     top: 0;
 }
 
-/* Add shadow header */
+/* Add sombra ao header */
 .shadow-header{
   box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12);
 }
 
-/* Active link */
+/* fonte branca no mobile quando uma section da nav está ativada */
 .active-link{
   color: var(--white-color);
 }
@@ -1011,6 +1008,15 @@ body.dark-theme{
   background-color: var(--first-color);
 }
 
+.contact__message{
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
+}
+
+
 /*=============== FOOTER ===============*/
 .footer{
   background-color: var(--black-color);
@@ -1488,5 +1494,4 @@ body.dark-theme{
     column-gap: 3rem;
     order: 1;
   }
-  
-  }
+}
