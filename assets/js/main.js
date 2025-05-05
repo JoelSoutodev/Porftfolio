@@ -1,42 +1,40 @@
-const navMenu = document.getElementById('nav-menu')
+// ========= MOSTRAR MENU ===========
+const navMenu = document.getElementById('nav-menu') // ARMAZENA
 const navToggle = document.getElementById('nav-toggle')
 const navClose = document.getElementById('nav-close')
 
-/* Menu show */
-if(navToggle){
+/* MOSTRA MENU */
+if(navToggle){ // VALIDA SE A CONSTANTE EXISTE
     navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu') 
+        navMenu.classList.add('show-menu') // CRIA UMA NOVA CLASSE SHOW-MENU
     })
 }
 
-/* Menu hidden */
-if(navClose){
+/* ESCONDE MENU */
+if(navClose){ // VALIDA SE A CONSTANTE EXISTE
     navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
+        navMenu.classList.remove('show-menu') // REMOVE A CLASSE SHOW-MENU
     })
 }
-
-const navLink = document.querySelectorAll('.nav__link')
+// ============= REMOVER AO CLICAR EM UM LINK ==================
+const navLink = document.querySelectorAll('.nav__link') // ARMAZENA
 
 const linkAction = () =>{
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
+    // Quando clicamos em cada nav__link, removemos a classe show-menu
     navMenu.classList.remove('show-menu')
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction)) /* forEach PERCORRE TODOS OS ELEMENTOS DENTRO DE UM 
+ELEMENTO E QUANDO FOR CLICADO ELE CHAMA A FUNCAO LINKACTION*/
 
-const shadowHeader = () =>{
-    const header = document.getElementById('header')
-    this.scrollY >= 50 ? header.classList.add('shadow-header')
-                       : header.classList.remove('shadow-header')
-}
-window.addEventListener('scroll', shadowHeader)
 
+
+/*======================== ENVIO DO EMAIL ==============================*/
 const contactForm = document.getElementById('contact-form')
 const contactMessage = document.getElementById('contact-message')
 
 const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault() // impede o envio tradicional do formulário
 
     // serviceID - templateID - #form - publicKey
 
@@ -60,58 +58,56 @@ const sendEmail = (e) => {
 
 contactForm.addEventListener('submit', sendEmail)
 
-const scrollUp = () =>{
-    const scrollUp = document.getElementById('scroll-up');
-    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                        : scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
 
-const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
+// ====================== link ativado ======================
+const secoes = document.querySelectorAll('section[id]') // Pega todas as sections com id
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+const ativarScroll = () => {
+  	const rolagemY = window.scrollY // Guarda quantos pixels a página foi rolada
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
+	secoes.forEach(secaoAtual => { // Percorre todas as sections que têm id
+		const alturaSecao = secaoAtual.offsetHeight, // Pega a altura da seção
+			  topoSecao = secaoAtual.offsetTop - 58, // Ponto onde a seção começa menos 58px do header
+			  idSecao = secaoAtual.getAttribute('id'),  // Pega o id da seção
+			  linkMenu = document.querySelector('.nav__menu a[href*=' + idSecao + ']') // Encontra o link do menu correspondente
+
+		if(rolagemY > topoSecao && rolagemY <= topoSecao + alturaSecao){ // Verifica se o scroll está dentro da seção
+			linkMenu.classList.add('active-link') // Adiciona a classe se estiver visível
 		}else{
-			sectionsClass.classList.remove('active-link')
+			linkMenu.classList.remove('active-link') // Remove a classe se não estiver visível
 		}                                                    
 	})
 }
-window.addEventListener('scroll', scrollActive)
+window.addEventListener('scroll', ativarScroll)
 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'ri-sun-line'
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+/*===================== MUDANÇA DE TEMA =======================*/
+const botaoTema = document.getElementById('theme-button') // ARMAZENA O BOTÃO
+const temaEscuroClasse = 'dark-theme' // ARMAZENA O NOME DA CLASSE PARA ATIVAR O MODO ESCURO
+const iconeSolClasse = 'ri-sun-line' // ARMAZENA O NOME DA CLASSE PARA TROCAR O ÍCONE
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+// Verifica o tema salvo anteriormente pelo usuário (se houver)
+const temaSelecionado = localStorage.getItem('tema-selecionado')
+const iconeSelecionado = localStorage.getItem('icone-selecionado')
 
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+// VERIFICA SE CLASSE TEMA ESCURO A CLASSE DARK-THEME ESTÁ PRESENTE NO BODY SE SIM O TEMA ATUALMENTE ESTÁ ESCURO SENÃO ESTÁ CLARO
+const obterTemaAtual = () => document.body.classList.contains(temaEscuroClasse) ? 'escuro' : 'claro'
+// MESMA COISA DO TEMA SE HOUVER A CLASSE RI-MOON-LINE ESTÁ CLARO COM ÍCONE DA LUA SENÃO ESCURO COM ÍCONE DO SOL
+const obterIconeAtual = () => botaoTema.classList.contains(iconeSolClasse) ? 'ri-moon-line' : 'ri-sun-line'
+
+// Se o usuário já tinha escolhido um tema antes, aplica ao carregar a página
+if (temaSelecionado) {
+  document.body.classList[temaSelecionado === 'escuro' ? 'add' : 'remove'](temaEscuroClasse) 
+  botaoTema.classList[iconeSelecionado === 'ri-moon-line' ? 'add' : 'remove'](iconeSolClasse)
 }
 
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
+// Ativar/desativar manualmente o modo escuro ao clicar no botão
+botaoTema.addEventListener('click', () => {
+  // Alterna entre claro e escuro
+  document.body.classList.toggle(temaEscuroClasse)
+  botaoTema.classList.toggle(iconeSolClasse)
+  
+  // Salva a escolha do usuário no navegador
+  localStorage.setItem('tema-selecionado', obterTemaAtual())
+  localStorage.setItem('icone-selecionado', obterIconeAtual())
 })

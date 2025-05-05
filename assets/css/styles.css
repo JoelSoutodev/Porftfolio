@@ -60,7 +60,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* ROLAGEM SUAVE*/
 }
 
 body {
@@ -68,7 +68,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background-color .4s;
+  transition: background-color .4s; /*MUDANÇA SUAVE DE BACKGROUND-COLOR*/
 }
 
 h1, h2, h3, h4 {
@@ -77,14 +77,14 @@ h1, h2, h3, h4 {
 }
 
 ul {
-  list-style: none;
+  list-style: none; /* REMOVE AS BOLINHAS E ETC*/
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none; /* REMOVE AS MARCAÇÕES E ETC */
 }
 
-img {
+img {  /*DEIXAR AS IMAGENS ADAPTÁVEIS*/
   display: block;
   max-width: 100%;
   height: auto;
@@ -119,9 +119,7 @@ body.dark-theme{
 	Mudanças de cor em algumas partes
 do site, no tema escuro
 ==========*/
-.dark-theme .shadow-header{
-  box-shadow: 0 1px 12px #00000099;
-}
+
 
 .dark-theme .section__title-1::after,
 .dark-theme .section__title-2::after{
@@ -134,8 +132,8 @@ do site, no tema escuro
 
 .dark-theme .home__description b{
   background: linear-gradient(90deg,
-              hsla(14, 80%, 50%, .3),
-              hsla(14, 80%, 50%, 0));
+              rgba(230, 73, 25, 0.3),
+              rgba(230, 73, 25, 0));
 }
 
 .dark-theme :is(.button__ghost, .services__icon i){
@@ -154,17 +152,6 @@ do site, no tema escuro
   background-color: hsl(0, 0%, 4%);
 }
 
-.dark-theme::-webkit-scrollbar{
-  background-color: hsl(0, 0%, 20%);
-}
-
-.dark-theme::-webkit-scrollbar-thumb{
-  background-color: hsl(0, 0%, 30%);
-}
-
-.dark-theme::-webkit-scrollbar-thumb:hover{
-  background-color: hsl(0, 0%, 40%);
-}
 /*=============== CLASSE CSS REUTILIZÁVEL ===============*/
 .container {
   max-width: 1120px;
@@ -199,7 +186,7 @@ do site, no tema escuro
   content: "";
   width: 40px;
   height: 28px;
-  background-color: hsla(14, 98%, 50%, .2);
+  background-color: rgba(252, 61, 3, 0.2);
   position: absolute;
   top: -4px;
   right: -8px;
@@ -218,7 +205,7 @@ do site, no tema escuro
   rotate: -30deg;
 }
 
-.geometric-box::after { /* Parte preta do quadrado laranja */ 
+.geometric-box::after{ /* Parte preta do quadrado laranja */ 
   content: "";
   position: absolute;
   width: 16px;
@@ -237,7 +224,7 @@ do site, no tema escuro
     left: 0;
     background-color: var(--body-color);
     z-index: var(--z-fixed);
-    transition: box-shadow .4s, background-color .4s; /* suaviza a animação */
+    transition: background-color .4s; /* suaviza a animação */
 }
 
 .nav{
@@ -267,7 +254,7 @@ do site, no tema escuro
 }
 
 .nav__logo-circle{
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .nav__toggle{
@@ -369,10 +356,6 @@ do site, no tema escuro
     top: 0;
 }
 
-/* Add sombra ao header */
-.shadow-header{
-  box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12);
-}
 
 /* fonte branca no mobile quando uma section da nav está ativada */
 .active-link{
@@ -407,7 +390,7 @@ do site, no tema escuro
   z-index: 10;
 }
 
-.home__shadow{
+.home__shadow{ /* efeito de sombra */
   width: 100%;
   height: 100%;
   background-color: var(--container-color);
@@ -419,7 +402,7 @@ do site, no tema escuro
   transition: background-color .4s;
 }
 
-.home__arrow,
+.home__arrow, /* config das flecha e do risco */
 .home__line{
   position: absolute;
   filter: invert(1);
@@ -427,23 +410,23 @@ do site, no tema escuro
   transition: filter .4s;
 }
 
-.home__arrow{
+.home__arrow{ /* posicionamento da flecha*/
   left: 40%;
   bottom: -4rem;
 }
 
-.home__line{
+.home__line{ /* posicionamento do risco*/
   right: -2rem;
   bottom: -.5rem;
 }
 
-.home__perfil .geometric-box{
+.home__perfil .geometric-box{ /* posicionamento do quadrado*/
   top: 25px;
   left: -.7rem;
   z-index: 10;
 }
 
-.home__social{
+.home__social{ /* posicionamento dos ícones das redes sociais*/
   height: max-content;
   position: absolute;
   left: -3rem;
@@ -480,17 +463,17 @@ do site, no tema escuro
 
 .home__description b{
   background: linear-gradient(90deg,
-              hsla(14, 98%, 50%, .3),
-              hsla(14, 98%, 50%, 0));
+              rgba(252, 61, 3, 0.3),
+              rgba(252, 61, 3, 0));
 }
 
-.home__scroll{
+.home__scroll{ 
   display: block;
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto; /* centraliza o ícone */
 }
 
-.home__scroll-text{
+.home__scroll-text{ /*Apaga o Saiba mais*/
   display: none;
 }
 
@@ -508,11 +491,11 @@ do site, no tema escuro
 }
 
 .home__scroll-box i{
-  animation: scroll-down 3s infinite;
+  animation: scroll-down 3s infinite; /* animação infinita */
 }
 
 
-/* Animate scroll icon */
+/* animação do ícone de scroll */
 @keyframes scroll-down{
   0%{
     transform: translateY(-1rem);
@@ -523,7 +506,7 @@ do site, no tema escuro
   opacity: 1;
   }
   100%{
-    transform: translateY(.6rem);
+    transform: translateY(1rem);
     opacity: 0;
   }
 }
@@ -666,7 +649,7 @@ do site, no tema escuro
 
 /*=============== SERVICES ===============*/
 .services__container{
-  grid-template-columns: 250px;
+  grid-template-columns: 250px; /* template versão mobile */
   justify-content: center;
   row-gap: 2rem;
   padding-top: 1rem;
@@ -685,7 +668,7 @@ do site, no tema escuro
   position: relative;
   transition: background-color .4s, border .4s;
 }
-
+/* Efeito de sombra saindo */
 .services__border{
   position: absolute;
   width: 100%;
@@ -711,7 +694,7 @@ do site, no tema escuro
   position: relative;
   z-index: 5;
 }
-
+/* Sombra atrás do icon */
 .services__box{
   position: absolute;
   width: 24px;
@@ -730,7 +713,7 @@ do site, no tema escuro
   background-color: var(--container-color);
   transition: background-color .4s;
 }
-
+/* Distancia os cards na versão mobile */
 .projects__container{
   row-gap: 2rem;
 }
@@ -744,8 +727,8 @@ do site, no tema escuro
   position: relative;
   margin-bottom: .75rem;
 }
-
-.projects__button{
+/* mobile */
+.projects__button{ /*botão preto */
   position: absolute;
   right: 1rem;
   bottom: -1.5rem;
@@ -764,7 +747,6 @@ do site, no tema escuro
   color: var(--text-color);
   margin-bottom: .75rem;
   padding-left: 1.75rem;
-
 }
 
 .projects__subtitle::after{
@@ -782,12 +764,11 @@ do site, no tema escuro
   margin-bottom: .75rem;
 }
 
-.projects__buttons{
+.projects__buttons{ 
   display: flex;
   align-items: center;
-  column-gap: 1rem;
 }
-
+/* Nome 'visualizar' */
 .projects__link{
   display: flex;
   align-items: center;
@@ -797,12 +778,13 @@ do site, no tema escuro
   font-weight: var(--font-medium);
   transition: color .4s;
 }
-
+/* ícone do github */
 .projects__link i{
   font-size: 1rem;
   color: var(--title-color);
   transition: color .4s;
 }
+
 .projects__link:hover,
 .projects__link:hover i{
   color: var(--first-color);
@@ -818,7 +800,7 @@ do site, no tema escuro
 .contact{
   padding-bottom: 0;
 }
-
+/* mobile */
 .contact__container{
   position: relative;
   grid-template-rows: 300px max-content max-content;
@@ -831,7 +813,7 @@ do site, no tema escuro
   height: 300px;
   background-color: var(--container-color);
   padding: 3rem 1.5rem 3.5rem;
-  margin-left: auto;
+  margin-left: auto; /* Joga para a direita */
   border-bottom: 4px solid var(--first-color);
   z-index: 5;
   transition: background-color .4s;
@@ -839,7 +821,7 @@ do site, no tema escuro
 
 .contact__data .section__title-2{
   margin: 0 0 1.5rem;
-  transform: translateX(-3rem);
+  transform: translateX(-3rem); /* Joga o Contate me para o lado*/
 }
 
 .contact__description-1{
@@ -893,8 +875,8 @@ do site, no tema escuro
 .contact__button{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  outline: none;
-  border: none;
+  outline: none; /* retira os aspecto arredondado do input quando selecionado*/
+  border: none; /* retira a borda */
 }
 
 .contact__input{
@@ -902,7 +884,7 @@ do site, no tema escuro
   width: 100%;
   height: 100%;
   background-color: var(--black-color);
-  border: 3px solid var(--black-color-light);
+  border: 3px solid var(--black-color-light); /*borda recolocada*/
   color: var(--white-color);
   padding: .5rem 1rem;
   font-weight: var(--font-medium);
@@ -918,7 +900,7 @@ do site, no tema escuro
   border: 3px solid var(--white-color);
 }
 
-.contact__input:-webkit-autofill{
+.contact__input:-webkit-autofill{ /* Retira o aquela marcação feia de quando vc clica em um recomendado */
   transition: background-color 6000s, color 6000s;
 }
 
@@ -931,9 +913,9 @@ do site, no tema escuro
   font-weight: var(--font-medium);
   background-color: var(--black-color);
   padding: 8px;
-  pointer-events: none;
+  pointer-events: none; /* exclui a interação com o mouse */
   transition: top .4s, opacity .4s, background-color .4s;
-  opacity: 0;
+  opacity: 0; /* se oculta */
 }
 
 .contact__form .contact__area{
@@ -941,7 +923,7 @@ do site, no tema escuro
 }
 
 .contact__area textarea{
-  resize: none;
+  resize: none; /* o textarea mensagem fica tamanho fixo*/
   padding-top: 1rem;
 }
 
@@ -950,15 +932,15 @@ do site, no tema escuro
   cursor: pointer;
 }
 
-/* Opaque placeholder */
+/* PLACEHOLDER INVISÍVEL QUANDO SELECIONADO NO INPUT */
 
 .contact__input:focus::placeholder{
   opacity: 0;
 }
 
-/* Move label up & sticky label */
+/* EFEITO DO PLACEHOLDER PARA CIMA QUANDO INPUT SELECIONADO*/
 .contact__input:focus + .contact__label,
-.contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label{
+.contact__input:not(:placeholder-shown):not(:focus) + .contact__label{
   opacity: 1;
   top: -16px; 
 }
@@ -1015,8 +997,6 @@ do site, no tema escuro
   bottom: -1.6rem;
   left: 0;
 }
-
-
 /*=============== FOOTER ===============*/
 .footer{
   background-color: var(--black-color);
@@ -1052,42 +1032,9 @@ do site, no tema escuro
   color: white;
   font-weight: var(--font-medium);
 }
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
-  width: .6rem;
-  border-radius: .5rem;
-  background-color: hsl( 0, 0%, 65%);
-}
 
-::-webkit-scrollbar-thumb:hover{
-  background-color: hsl( 0, 0%, 45%);
-}
-
-/*=============== SCROLL UP ===============*/
-.scrollup{
-  position: fixed;
-  right: 1rem;
-  bottom: -50%;
-  background-color: var(--black-color);
-  display: inline-flex;
-  padding: 8px;
-  font-size: 1.25rem;
-  color: var(--white-color);
-  z-index: var(--z-tooltip);
-  transition: bottom .4s, transform .4s, background-color .4s;
-}
-
-.scrollup:hover{
-  transform: translateY(-.5rem);
-}
-
-/* Show Scroll Up */
-.show-scroll{
-  bottom: 3rem;
-}
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
+/*=============== RESPONSIVIDADE ===============*/
+/* Dispositivos Pequenos*/
 @media screen and (max-width: 340px){
   .container{
     margin-inline: 1rem;
@@ -1114,8 +1061,8 @@ do site, no tema escuro
 
 }
 
-/* For medium devices */
-@media screen and (min-width: 576px){
+/* Para dispositivos médios */
+@media screen and (min-width: 576px){ */
   .home__container,
   .about__container,
   .projects__container{
@@ -1148,7 +1095,7 @@ do site, no tema escuro
   .dark-theme .contact__social-arrow{
     filter: none;
   }
-}
+} 
 
 @media screen and (min-width: 768px){
   .services__container{
@@ -1159,7 +1106,7 @@ do site, no tema escuro
     grid-template-columns: repeat(2, 350px);
   }
 }
-/* For large devices */
+/* Para dispositivos Grandes */
 @media screen and (min-width: 1150px){
   .container{
     margin-inline: auto;
@@ -1232,7 +1179,7 @@ do site, no tema escuro
 
   .home__container{
     grid-template-columns: repeat(2, 460px);
-    gap: 2rem 4 rem;
+    gap: 2rem 4rem;
     align-items: center;
     padding-block: 5.5rem;
   }
@@ -1325,7 +1272,6 @@ do site, no tema escuro
     padding-block: 1rem;
   }
   .about__perfil{
-    order: -1;
     grid-row: 1 / 3;
   }
   .about__image{
